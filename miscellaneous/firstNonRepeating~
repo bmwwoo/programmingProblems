@@ -1,0 +1,20 @@
+#create a function that takes in a string and returns the
+#first non-repeating character
+#ex. ababc -> c
+#ex. abc -> a
+
+def nonRepeat(string):
+    map = {}
+    for char in string:
+    	if map.find(char) == False:
+	    map[char] = 1
+	else:
+	    map[char] += 1
+    for char in string:
+        if map.find(char) == 1:
+  	    return char
+
+print nonRepeat("ababc")
+print nonRepeat("abac")
+print nonRepeat("abc")
+print nonRepeat("abccb")

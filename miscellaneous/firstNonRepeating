@@ -1,0 +1,20 @@
+#create a function that takes in a string and returns the
+#first non-repeating character
+#ex. ababc -> c
+#ex. abc -> a
+
+def nonRepeat(string):
+    map = {}
+    for char in string:
+    	if map.get(char) == None:
+	    map[char] = 1
+	else:
+	    map[char] += 1
+    for char in string:
+        if map.get(char) == 1:
+  	    return char
+
+print "Input: ababc\tOutput should be: c\tOutput is:", nonRepeat("ababc")
+print "Input: abac\tOutput should be: b\tOutput is:", nonRepeat("abac")
+print "Input: abc\tOutput should be: a\tOutput is:", nonRepeat("abc")
+print "Input: abccb\tOutput should be: a\tOutput is:", nonRepeat("abccb")
