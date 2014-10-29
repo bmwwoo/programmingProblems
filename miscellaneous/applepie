@@ -1,0 +1,20 @@
+# create a function that takes a string that contains two words
+# and a dictionary of all the English words and returns what two
+# words were in the original string
+# ex. "applepie" returns "apple pie"
+
+
+def tokenizeIt(doubleWord, dictionary):
+    i = 0
+    while i < doubleWord.__len__():
+    	  firstWord = doubleWord[:i]
+	  secondWord = doubleWord[i:]
+#	  print firstWord + "\t" + secondWord
+	  if dictionary.get(firstWord) and dictionary.get(secondWord):
+	     return firstWord + " " + secondWord
+          i += 1
+    return True    	
+
+word = "applepie"
+dictionary = { "apple" : "apple", "pie" : "pie" }
+print tokenizeIt(word, dictionary)
